@@ -4,19 +4,17 @@ import { styled } from 'styled-components'
 import { Routes } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import Menu from './Menu'
 
-function App() {
+const Projects = () => {
 
   // use props for something here
 
   return (
     <>
 
-      <MyHeader>My Projects!</MyHeader>
-      <Link to="/about">About!</Link>
-      <Link to="/projects">Projects!</Link>
-      <Link to="/contact">Contact!</Link>
-      <Link to="/">Back home!</Link>
+      <Menu currentPage="projects" />
 
     </>
   )
@@ -27,4 +25,4 @@ const MyHeader = styled.h1`
   font-size: 24px;
 `
 
-export default App
+export default Projects

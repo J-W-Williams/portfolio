@@ -11,28 +11,20 @@ import Homepage from "./Homepage";
 import { useContext } from 'react';
 
 
-function App() {
+const App = () =>  {
 
-  // use props for something here
+  // do something cool here
+
   return (
     <>
-{/* 
-      <MyHeader>App!</MyHeader>
-
-      <Link to="/about">About!</Link>
-      <Link to="/projects">Projects!</Link>
-      <Link to="/contact">Contact!</Link>
-      <Link to="/">Back home!</Link> */}
-
-      {/* <BrowserRouter>
+      <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Homepage/>} />
                 <Route path="/about" element={<About />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/contact" element={<Contact />} />
             </Routes>
-        </BrowserRouter> */}
-
+      </BrowserRouter>
     </>
   )
 }

@@ -5,21 +5,18 @@ import { Routes } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
+import Menu from "./Menu";
 
 
-function App() {
+const About = () => {
 
   // use props for something here
 
   return (
     <>
 
-      <MyHeader>About!</MyHeader>
 
-      <Link to="/about">About!</Link>
-      <Link to="/projects">Projects!</Link>
-      <Link to="/contact">Contact!</Link>
-      <Link to="/">Back home!</Link>
+      <Menu currentPage="about" />
 
 
     </>
@@ -31,4 +28,10 @@ const MyHeader = styled.h1`
   font-size: 24px;
 `
 
-export default App
+const MyText = styled.div`
+  font-family: "Vollkorn";
+  font-size: 14px;
+  text-decoration: none;
+`
+
+export default About
