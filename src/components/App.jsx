@@ -6,9 +6,7 @@ import About from "./About";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Homepage from "./Homepage";
-import Acceuil from './Acceuil';
-import Projets from './Projets';
-import Apropos from './Apropos';
+
 
 const App = () =>  {
 
@@ -22,10 +20,10 @@ const App = () =>  {
                 <Route path="/about" element={<About />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/fr/" element={<Acceuil/>} />
+                {/* <Route path="/fr/" element={<Acceuil/>} />
                 <Route path="/fr/apropos" element={<Apropos />} />
                 <Route path="fr/projets" element={<Projets />} />
-                <Route path="/fr/contact" element={<Contact />} />
+                <Route path="/fr/contact" element={<Contact />} /> */}
             </Routes>
       </BrowserRouter>
     </>

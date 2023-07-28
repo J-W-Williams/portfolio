@@ -3,23 +3,77 @@ import { Link } from 'react-router-dom'
 import EnFrSelect from './enFrSelect'
 import { useContext } from 'react'
 import { LanguageContext } from '../context/LanguageContext'
+import siteText from "../data/siteText.json";
 
 const Menu = ({currentPage}) => {
 
   const { enFr, setEnFr } = useContext(LanguageContext);
+  
+  const getTranslation = (section, key) => {
+    return siteText[enFr][section][key];
+  };
 
+  const getLink = (linkTo, title) => {
+
+    const languageLinks = {
+      projects: {
+        en: { url: '/projects', title: 'Projects' },
+        fr: { url: '/projets', title: 'Projets' },
+      },
+      about: {
+        en: { url: '/about', title: 'About' },
+        fr: { url: '/accueil', title: 'Accueil' },
+      },
+      contact: {
+        en: { url: '/contact', title: 'Contact' },
+        fr: { url: '/contactFR', title: 'Contact' },
+      },
+    };
+
+    if (languageLinks[linkTo]) {
+      const linkInfo = languageLinks[linkTo][enFr] || languageLinks[linkTo].en;
+      return {
+        url: linkInfo.url,
+        title: linkInfo.title,
+      };
+    }
+  }
+
+  console.log("siteText:", siteText);
+  
   return (
     <>
+
       <EnFrSelect page={currentPage}/>
-      <MyHeader>{currentPage}</MyHeader>
-      {enFr === "en" ?   <Link to="/about"><MyText>About!</MyText></Link> : <Link to="/fr/apropos"><MyText>A propos!</MyText></Link>}
-      {enFr === "en" ?   <Link to="/projects"><MyText>Projects!</MyText></Link> : <Link to="/fr/projets"><MyText>Projets!</MyText></Link>}                                 
-      {enFr === "en" ?   <Link to="/contact"><MyText>Contact!</MyText></Link> : <Link to="/fr/contact"><MyText>Contact!</MyText></Link>} 
-      {enFr === "en" ?   <Link to="/"><MyText>Back Home!</MyText></Link> : <Link to="/fr"><MyText>Acceuil!</MyText></Link>}     
+      <MyHeader>{getTranslation('home', 'title')}</MyHeader>
+
+    <LinkHolder>
+      <Link to={getLink('projects', 'Projects').url} style={{textDecoration: 'none'}}>
+      <LinkText>  {getLink('projects', 'Projects').title}  </LinkText>
+      </Link>
+      <Link to={getLink('about', 'About').url} style={{textDecoration: 'none'}}>
+      <LinkText>  {getLink('about', 'Acceuil').title}  </LinkText>
+      </Link>
+      <Link to={getLink('contact', 'Contact').url} style={{textDecoration: 'none'}}>
+           <LinkText> {getLink('contact', 'Contacts').title} </LinkText>
+      </Link>
+      </LinkHolder>
 
     </>
   )
 }
+
+const LinkHolder = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-family: "Vollkorn";
+`
+
+const LinkText = styled.div`
+  color: black;
+  padding-right: 10px;
+`
 
 const MyHeader = styled.h1`
   font-family: "Vollkorn";
