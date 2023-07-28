@@ -11,6 +11,7 @@ const Projects = () => {
     <>
 
       <Menu currentPage="projects" />
+      <p>Projects!</p>
 
     </>
   )

@@ -6,8 +6,8 @@ const Homepage = () => {
 
   return (
     <>
-    <Menu currentPage="homepage" />
-    <p>No place like home!</p>
+    <Menu currentPage="acceuil" />
+    <p>Acceuil!</p>
     </>   
   )
 }

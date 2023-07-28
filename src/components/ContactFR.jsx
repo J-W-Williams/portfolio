@@ -10,9 +10,8 @@ const Contact = () => {
   return (
     <>
 
-    <Menu currentPage="contact" />
-    <p>Contact!</p>
-
+    <Menu currentPage="contactFR" />
+    <p>Contactez-moi!</p>
     </>
   )
 }

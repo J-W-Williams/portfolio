@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 import { Link } from 'react-router-dom'
-import EnFrSelect from './EnFrSelect'
+import EnFrSelect from "./EnFrSelect";
 import { useContext } from 'react'
 import { LanguageContext } from '../context/LanguageContext'
 import siteText from "../data/siteText.json";
@@ -13,20 +13,24 @@ const Menu = ({currentPage}) => {
     return siteText[enFr][section][key];
   };
 
-  const getLink = (linkTo, title) => {
+  const getLink = (linkTo) => {
 
     const languageLinks = {
+      homepage: {
+        en: { url: '/', title: 'Homepage' },
+        fr: { url: '/fr', title: 'Acceuil' },
+      },
       projects: {
         en: { url: '/projects', title: 'Projects' },
-        fr: { url: '/projets', title: 'Projets' },
+        fr: { url: '/fr/projets', title: 'Projets' },
       },
       about: {
         en: { url: '/about', title: 'About' },
-        fr: { url: '/accueil', title: 'Accueil' },
+        fr: { url: '/fr/apropos', title: 'Apropos' },
       },
       contact: {
         en: { url: '/contact', title: 'Contact' },
-        fr: { url: '/contactFR', title: 'Contact' },
+        fr: { url: '/fr/contactFR', title: 'Contact' },
       },
     };
 
@@ -44,18 +48,18 @@ const Menu = ({currentPage}) => {
   return (
     <>
 
-      <EnFrSelect page={currentPage}/>
-      <MyHeader>{getTranslation('home', 'title')}</MyHeader>
+    <EnFrSelect page={currentPage}/>
+    <MyHeader>{getTranslation('home', 'title')}</MyHeader>
 
     <LinkHolder>
-      <Link to={getLink('projects', 'Projects').url} style={{textDecoration: 'none'}}>
-      <LinkText>  {getLink('projects', 'Projects').title}  </LinkText>
+      <Link to={getLink('about').url} style={{textDecoration: 'none'}}>
+        <LinkText>{getLink('about').title}</LinkText>
       </Link>
-      <Link to={getLink('about', 'About').url} style={{textDecoration: 'none'}}>
-      <LinkText>  {getLink('about', 'Acceuil').title}  </LinkText>
-      </Link>
-      <Link to={getLink('contact', 'Contact').url} style={{textDecoration: 'none'}}>
-           <LinkText> {getLink('contact', 'Contacts').title} </LinkText>
+      <Link to={getLink('projects').url} style={{textDecoration: 'none'}}>
+        <LinkText>{getLink('projects').title}</LinkText>
+      </Link>  
+      <Link to={getLink('contact').url} style={{textDecoration: 'none'}}>
+        <LinkText> {getLink('contact').title} </LinkText>
       </Link>
       </LinkHolder>
 

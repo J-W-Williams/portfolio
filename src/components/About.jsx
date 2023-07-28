@@ -9,7 +9,7 @@ const About = () => {
     <>
 
       <Menu currentPage="about" />
-
+      <p>About me!</p>
     </>
   )
 }

@@ -37,7 +37,7 @@
         "address": "123 Rue Principale",
         "phone": "555-1234",
         "email": "contact@example.com",
-        "url": "f/contact" 
+        "url": "/fr/contact" 
       }
       
     }
