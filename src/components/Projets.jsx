@@ -3,14 +3,14 @@ import { BrowserRouter } from 'react-router-dom'
 import { styled } from 'styled-components'
 import Menu from './Menu'
 
-const Projects = () => {
+const Projets = () => {
 
   // use props for something here
 
   return (
     <>
 
-      <Menu currentPage="projects" />
+      <Menu currentPage="projets" />
 
     </>
   )
@@ -21,4 +21,4 @@ const MyHeader = styled.h1`
   font-size: 24px;
 `
 
-export default Projects;
+export default Projets;

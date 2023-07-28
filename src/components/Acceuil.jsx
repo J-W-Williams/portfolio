@@ -1,15 +1,15 @@
 import Menu from './Menu'
 
-const Homepage = () => {
+const Acceuil = () => {
 
   // use props for something here
 
   return (
     <>
-    <Menu currentPage="homepage" />
+    <Menu currentPage="acceuil" />
     </>   
   )
 }
 
 
-export default Homepage
+export default Acceuil;

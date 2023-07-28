@@ -1,19 +1,17 @@
 import Menu from "./Menu";
 
-
-const About = () => {
+const Apropos = () => {
 
   // use props for something here
 
   return (
     <>
 
-      <Menu currentPage="about" />
+      <Menu currentPage="apropos" />
 
     </>
   )
 }
 
 
-
-export default About
+export default Apropos;
