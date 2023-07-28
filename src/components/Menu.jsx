@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 import { Link } from 'react-router-dom'
-import EnFrSelect from './enFrSelect'
+import EnFrSelect from './EnFrSelect'
 import { useContext } from 'react'
 import { LanguageContext } from '../context/LanguageContext'
 import siteText from "../data/siteText.json";
