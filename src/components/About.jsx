@@ -24,16 +24,15 @@ const About = () => {
       </MainContent>
 
 
-
     <IconWrapper>
-      <ImgWrapper src="../src/assets/html.png" alt="HTML5"></ImgWrapper>
-      <ImgWrapper src="../src/assets/css.png" alt="CSS3"></ImgWrapper>
-      <ImgWrapper src="../src/assets/javascript.png" alt="JavaScript"></ImgWrapper>
-      <ImgWrapper src="../src/assets/react.png" alt="React"></ImgWrapper>
-      <ImgWrapper src="../src/assets/mongo.svg" alt="MongoDB"></ImgWrapper>
-      <ImgWrapper src="../src/assets/node.png" alt="NodeJS"></ImgWrapper>
-      <ImgWrapper src="../src/assets/insomnia.png" alt="Insomnia"></ImgWrapper>
-      <ImgWrapper src="../src/assets/vscode.png" alt="Visual Studio Code"></ImgWrapper>
+      <ImgWrapper src="/html.png" alt="HTML5"></ImgWrapper>
+      <ImgWrapper src="/css.png" alt="CSS3"></ImgWrapper>
+      <ImgWrapper src="/javascript.png" alt="JavaScript"></ImgWrapper>
+      <ImgWrapper src="/react.png" alt="React"></ImgWrapper>
+      <ImgWrapper src="/mongo.svg" alt="MongoDB"></ImgWrapper>
+      <ImgWrapper src="/node.png" alt="NodeJS"></ImgWrapper>
+      <ImgWrapper src="/insomnia.png" alt="Insomnia"></ImgWrapper>
+      <ImgWrapper src="/vscode.png" alt="Visual Studio Code"></ImgWrapper>
     </IconWrapper>
 
     </Wrapper>

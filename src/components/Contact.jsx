@@ -35,9 +35,9 @@ const Contact = () => {
     <>
   <Wrapper>
     <Menu currentPage="contact" />
-    <p>Contact!</p>
 
-{/* 
+
+
     <form onSubmit={handleSubmit} >
         <ul>
           
@@ -45,18 +45,18 @@ const Contact = () => {
           <InputRow key={field.name}>
             <label htmlFor={field.name}>{field.label}: </label>
             <input
-              disabled={!formActive}
+              // disabled={!formActive}
               type="text"
               id={field.name}
               name={field.name}
-              value={menuItem[field.name]}
+              // value={inputItem[field.name]}
               onChange={handleChange}
             />
           </InputRow>
         ))}
 
         </ul>  
-    </form> */}
+    </form>
 
     </Wrapper>
     </>
@@ -74,6 +74,8 @@ const InputRow = styled.li`
   align-items: center;
   padding: 10px;
   width: 340px;
+  font-family: "Raleway";
+  font-weight: 200;
 `
 
 const MyHeader = styled.div`
