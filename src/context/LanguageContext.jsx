@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import { useState } from "react";
 
-export const LanguageContext = createContext("fr");
+export const LanguageContext = createContext("en");
 
 export const LanguageProvider = ({ children }) => {
    
@@ -17,7 +17,7 @@ export const LanguageProvider = ({ children }) => {
         // const asJSON = JSON.parse(currentLanguage);
     
         // Step 3: If data exists, return it. Else return null.
-        if (currentLanguage) {return currentLanguage} else {return "fr"};
+        if (currentLanguage) {return currentLanguage} else {return "en"};
 
     })
 

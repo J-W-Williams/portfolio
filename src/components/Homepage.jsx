@@ -10,17 +10,37 @@ const Homepage = () => {
     <Wrapper>
       <Menu currentPage="homepage" />
      
-
+      <HeaderWrapper>
         <MyHeader>
           Web developer & multimedia explorer 
-
         </MyHeader>
-     
-
+      </HeaderWrapper>
+        {/* idea: generate new logo via AI API */}
+        <LogoHolder><LogoImg src="/jww.png" alt="Logo of John Wrinch Williams, also known as jww"></LogoImg></LogoHolder>
       </Wrapper> 
     </>   
   )
 }
+
+const LogoImg = styled.img`
+  width: 100px;
+  border-radius: 25px;
+`
+
+const LogoHolder = styled.div`
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-right: 10px;
+`
+
+
+const HeaderWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center
+
+`
 
 const MyHeader = styled.div`
   font-family: "Raleway";

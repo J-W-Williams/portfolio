@@ -1,6 +1,7 @@
 import Menu from "./Menu";
 import { styled } from "styled-components";
-
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 const About = () => {
 
@@ -11,8 +12,11 @@ const About = () => {
 
       <Wrapper>
       <Menu currentPage="about" />
-      <MyHeader>Hi, I'm John.  Thanks for stopping by!</MyHeader>
-      
+      {/* have thought bubbles bubbling up from the portrait image */}
+      <MyHeader>Who is this John person anyway?</MyHeader>
+      {/* idea: have many different greetings when you get here. */}
+    {/* Greetings!       */}
+    {/* It could fade out & in between many of them on a .... setInteval! */}
     <PortraitHolder>
       <Portrait src = "/moi2.png" alt="Photo of John Wrinch Williams"></Portrait>
     </PortraitHolder>
@@ -25,6 +29,7 @@ const About = () => {
 
 
     <IconWrapper>
+   {/* For icons, need title below.  tiny flex UI design. */}
       <ImgWrapper src="/html.png" alt="HTML5"></ImgWrapper>
       <ImgWrapper src="/css.png" alt="CSS3"></ImgWrapper>
       <ImgWrapper src="/javascript.png" alt="JavaScript"></ImgWrapper>
@@ -41,6 +46,14 @@ const About = () => {
   )
 }
 
+const MyHeader = styled.div`
+  font-family: "Raleway";
+  font-weight: 400;
+  color: White;
+  font-size: 80px;
+  padding: 20px;
+`
+
 const PortraitHolder = styled.div`
   border-radius: 90px;
   width: 150px;
@@ -51,6 +64,9 @@ const Portrait = styled.img`
   border-radius: 75px;
   border: 5px solid white;
   margin-left: 20px;
+  &:hover {
+    scale: 1.05;
+  }
 `
 
 const Wrapper = styled.div`
@@ -59,25 +75,21 @@ const Wrapper = styled.div`
 
   background-color: #1f1f1f;
 `
-const MyHeader = styled.div`
-  font-family: "Raleway";
-  font-weight: 400;
-  color: white;
-  font-size: 18px;
-  padding: 20px;
-`
 
 const MainContent = styled.p`
 font-family: "Raleway";
 font-weight: 300;
 color: white;
-font-size: 12px;
+font-size: 16px;
 padding: 20px;
 line-height: 20px;
 `
 
 const ImgWrapper = styled.img`
   width: 50px;
+  &:hover {
+    scale: 1.15;
+  }
 `
 
 const IconWrapper = styled.div`

@@ -104,7 +104,6 @@ const LinkText = styled.div`
   &:hover {
     font-weight: 600;
   }
-  
 `
 
 const MyHeader = styled.h1`

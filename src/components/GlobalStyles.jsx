@@ -35,10 +35,11 @@ export default createGlobalStyle`
     }
 
     body {
-        background-color: ##1f1f1f;
+        background-color: #1f1f1f;
         color:white;
 
-    }
+}
+
     /* HTML5 display-role reset for older browsers */
     article, aside, details, figcaption, figure,
     footer, header, hgroup, menu, nav, section {

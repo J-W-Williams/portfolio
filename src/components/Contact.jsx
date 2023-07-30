@@ -8,11 +8,9 @@ const Contact = () => {
   // use props for something here
 
   const inputFields = [
-    { name: 'fname', label: 'First Name' },
-    { name: 'lname', label: 'Last Name' },
-    { name: 'phone', label: 'Phone' },
-    { name: 'address', label: 'Address' },
-    { name: 'email', label: 'Email' },
+    { name: 'name', label: 'Name ' },
+    { name: 'email', label: 'Email ' },
+    { name: 'message', label: 'Say hi! '}
   ];
 
   const handleSubmit = () => {
@@ -35,9 +33,14 @@ const Contact = () => {
     <>
   <Wrapper>
     <Menu currentPage="contact" />
+    <MyHeader>
+      Drop me a line!
+    </MyHeader>
+    <MainContent>
+    Drop me a line by filling out the form below!  I will get back to you near-instantaneously!  
 
-
-
+    </MainContent>
+    <FormWrapper>
     <form onSubmit={handleSubmit} >
         <ul>
           
@@ -57,15 +60,29 @@ const Contact = () => {
 
         </ul>  
     </form>
-
+    </FormWrapper>
     </Wrapper>
     </>
   )
 }
 
+
+const FormWrapper = styled.div`
+  
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+`
+
 const Wrapper = styled.div`
     /* background-image: url("./src/assets/bg2.jpg"); */
   background-color: #1f1f1f;
+
+  height: 100vh; 
+
 `
 const InputRow = styled.li`
   display: flex;
@@ -77,13 +94,12 @@ const InputRow = styled.li`
   font-family: "Raleway";
   font-weight: 200;
 `
-
 const MyHeader = styled.div`
   font-family: "Raleway";
   font-weight: 400;
-  color: white;
-  font-size: 18px;
-  padding: 20px;
+  color: White;
+  font-size: 80px;
+  padding: 10px;
 `
 
 const MainContent = styled.p`
