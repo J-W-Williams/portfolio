@@ -12,7 +12,7 @@ const Projets = () => {
   return (
     <>
     <Wrapper>
-    <Menu currentPage="projects" />
+    <Menu currentPage="projets" />
 
     <MyHeader>
       Choses que j'ai fait et que je vais faire
