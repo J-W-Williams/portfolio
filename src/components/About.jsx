@@ -14,7 +14,7 @@ const About = () => {
       <MyHeader>Hi, I'm John.  Thanks for stopping by!</MyHeader>
       
     <PortraitHolder>
-      <Portrait src = "../src/assets/moi2.png" alt="Photo of John Wrinch Williams"></Portrait>
+      <Portrait src = "/moi2.png" alt="Photo of John Wrinch Williams"></Portrait>
     </PortraitHolder>
       <MainContent>
       I'm John Wrinch Williams, a web developer based in Montreal (QC).  I use my middle name because we John Williamses are legion!  But there's only one of me.  Please have a look around and if there's anything I can help you with, please don't hesitate to reach out directly.
