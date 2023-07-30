@@ -1,18 +1,39 @@
 import { styled } from 'styled-components'
 import Menu from './Menu'
+import RandomGreeting from './RandomGreeting'
+import { useEffect } from 'react'
+import { useState } from 'react'
+
 
 const Homepage = () => {
 
-  // use props for something here
+  const greetingMessages = ["integrator", "multimedia explorer", "future teammate", "JavaScript fan", "full-stack developer", "constant learner"]
+  //let shuffleMessage = "old-school programmer";
+
+  const [shuffleMessage, setShuffleMessage] = useState("old-school programmer");
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setShuffleMessage(greetingMessages[Math.floor(Math.random() * greetingMessages.length)]);
+  
+  //     return {shuffleMessage};
+  //   }, 3000);
+  
+  //   return () => clearInterval(interval);
+  // }, [shuffleMessage]);
+
+  
 
   return (
     <>
     <Wrapper>
       <Menu currentPage="homepage" />
-     
+
       <HeaderWrapper>
         <MyHeader>
-          Web developer & multimedia explorer 
+          Web developer & 
+          {/* <RandomMessage>{shuffleMessage}</RandomMessage> */}
+          <RandomGreeting />
         </MyHeader>
       </HeaderWrapper>
         {/* idea: generate new logo via AI API */}
@@ -21,6 +42,11 @@ const Homepage = () => {
     </>   
   )
 }
+
+const RandomMessage = styled.div`
+  
+`
+
 
 const LogoImg = styled.img`
   width: 100px;

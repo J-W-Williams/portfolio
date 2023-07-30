@@ -44,8 +44,8 @@ const EnFrSelect = (currentPage) => {
     }
     
     // check storage; if nothing, add current language to it
+
     // actually do want to set it on change.  this is so the correct language will stay if the page is refreshed.
-    // !window.sessionStorage.getItem("currentLanguage") && window.sessionStorage.setItem("currentLanguage", enFr );
     window.sessionStorage.setItem("currentLanguage", enFr );
 
     // goal is: refresh or manual page entry: language maintained
@@ -98,22 +98,39 @@ const EnFrSelect = (currentPage) => {
 
     if (pageNow === "homepage") {
       goingTo = "/fr/";
+      setEnFr("fr");
+      window.sessionStorage.setItem("currentLanguage", "fr" );
     } else if (pageNow === "acceuil") {
       goingTo = "/";
+      setEnFr("en");
+      window.sessionStorage.setItem("currentLanguage", "en" );
     } else if (pageNow === "contact") {
       goingTo = "/fr/contactFR";
+      setEnFr("fr");
+      window.sessionStorage.setItem("currentLanguage", "fr" );
     } else if (pageNow === "contactFR") {
       goingTo = "/contact";
+      setEnFr("en");
+      window.sessionStorage.setItem("currentLanguage", "en" );
     } else if (pageNow === "projects") {
       goingTo = "/fr/projets";
+      setEnFr("fr");
+      window.sessionStorage.setItem("currentLanguage", "fr" );
     } else if (pageNow === "projets") {
       goingTo = "/projects";
+      setEnFr("en");
+      window.sessionStorage.setItem("currentLanguage", "en" );
     } else if (pageNow === "about") {
       goingTo = "/fr/apropos";
+      setEnFr("fr");
+      window.sessionStorage.setItem("currentLanguage", "fr" );
     } else if (pageNow === "apropos") {
       goingTo = "/about";
+      setEnFr("en");
+      window.sessionStorage.setItem("currentLanguage", "en" );
     }
     
+   
     console.log("goingTo:", goingTo);
     ; 
 

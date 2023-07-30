@@ -14,19 +14,11 @@ const Contact = () => {
   ];
 
   const handleSubmit = () => {
-
     // database connection coming soon...
-
   }
 
   const handleChange = (event) => {
-    // const { name, value } = event.target;
-    // // setOrder((prevData) => ({
-    //    setMenuItem((prevData) => ({
-
-    //   ...prevData,
-    //   [name]: value,
-    // }));
+    // do stuff
   };
 
   return (
