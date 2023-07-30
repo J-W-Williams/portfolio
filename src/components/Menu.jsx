@@ -11,7 +11,10 @@ const Menu = ({currentPage}) => {
 
   const { enFr, setEnFr } = useContext(LanguageContext);
 
+ // console.log("hello from menu. enFr:", enFr);
+
   const navigate = useNavigate();
+
   const viewNavigate = (newRoute) => {
     // Navigate to the new route
     if (!document.startViewTransition) {
@@ -40,7 +43,7 @@ const Menu = ({currentPage}) => {
       },
       about: {
         en: { url: '/about', title: 'About' },
-        fr: { url: '/fr/apropos', title: 'Apropos' },
+        fr: { url: '/fr/apropos', title: 'A propos' },
       },
       contact: {
         en: { url: '/contact', title: 'Contact' },
@@ -57,12 +60,16 @@ const Menu = ({currentPage}) => {
     }
   }
 
-  console.log("siteText:", siteText);
+
   
+
+  // console.log("siteText:", siteText);
+  
+// need to highlight currently-selected menu item
+
   return (
     <>
     <Wrapper>
-
       <MyHeader onClick={() => {viewNavigate(getLink('homepage').url)}}>{getTranslation('home', 'title')}</MyHeader>
       <EnFrSelect page={currentPage}/>
     </Wrapper>

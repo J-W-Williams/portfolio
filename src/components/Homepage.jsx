@@ -31,7 +31,7 @@ const LogoHolder = styled.div`
   display: flex;
   justify-content: right;
   align-items: center;
-  margin-right: 10px;
+  margin-right: 20px;
 `
 
 

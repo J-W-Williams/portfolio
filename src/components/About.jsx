@@ -13,10 +13,11 @@ const About = () => {
       <Wrapper>
       <Menu currentPage="about" />
       {/* have thought bubbles bubbling up from the portrait image */}
+      {/* also API call to mutate face */}
       <MyHeader>Who is this John person anyway?</MyHeader>
       {/* idea: have many different greetings when you get here. */}
     {/* Greetings!       */}
-    {/* It could fade out & in between many of them on a .... setInteval! */}
+    {/* It could fade out & in between many of them using a .... setInteval! */}
     <PortraitHolder>
       <Portrait src = "/moi2.png" alt="Photo of John Wrinch Williams"></Portrait>
     </PortraitHolder>
@@ -62,7 +63,7 @@ const PortraitHolder = styled.div`
 const Portrait = styled.img`
   width: 150px;
   border-radius: 75px;
-  border: 5px solid white;
+  border: 1px solid white;
   margin-left: 20px;
   &:hover {
     scale: 1.05;

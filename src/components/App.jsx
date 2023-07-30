@@ -28,10 +28,10 @@ const App = () =>  {
                 <Route path="/about" element={<About />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="fr/" element={<Acceuil/>} />
-                <Route path="fr/apropos" element={<Apropos />} />
-                <Route path="fr/projets" element={<Projets />} />
-                <Route path="fr/contactFR" element={<ContactFR />} />
+                <Route path="/fr/" element={<Acceuil/>} />
+                <Route path="/fr/apropos" element={<Apropos />} />
+                <Route path="/fr/projets" element={<Projets />} />
+                <Route path="/fr/contactFR" element={<ContactFR />} />
             </Routes>
       </BrowserRouter>
     </>
