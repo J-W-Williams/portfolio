@@ -3,6 +3,8 @@ import { styled } from 'styled-components'
 import { Routes } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 
+import GlobalStyles from "./GlobalStyles";
+
 import About from "./About";
 import Projects from "./Projects";
 import Contact from "./Contact";
@@ -19,6 +21,7 @@ const App = () =>  {
 
   return (
     <>
+      <GlobalStyles />
       <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Homepage/>} />

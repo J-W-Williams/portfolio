@@ -4,10 +4,24 @@ import EnFrSelect from "./EnFrSelect";
 import { useContext } from 'react'
 import { LanguageContext } from '../context/LanguageContext'
 import siteText from "../data/siteText.json";
+import { useNavigate } from 'react-router-dom';
+import GlobalStyles from "./GlobalStyles";
 
 const Menu = ({currentPage}) => {
 
   const { enFr, setEnFr } = useContext(LanguageContext);
+
+  const navigate = useNavigate();
+  const viewNavigate = (newRoute) => {
+    // Navigate to the new route
+    if (!document.startViewTransition) {
+      return navigate(newRoute);
+    } else {
+      return document.startViewTransition(() => {
+        navigate(newRoute);
+      });
+    }
+  };
   
   const getTranslation = (section, key) => {
     return siteText[enFr][section][key];
@@ -47,44 +61,63 @@ const Menu = ({currentPage}) => {
   
   return (
     <>
+    <Wrapper>
 
-    <EnFrSelect page={currentPage}/>
-    <MyHeader>{getTranslation('home', 'title')}</MyHeader>
-
+      <MyHeader onClick={() => {viewNavigate(getLink('homepage').url)}}>{getTranslation('home', 'title')}</MyHeader>
+      <EnFrSelect page={currentPage}/>
+    </Wrapper>
     <LinkHolder>
-      <Link to={getLink('about').url} style={{textDecoration: 'none'}}>
-        <LinkText>{getLink('about').title}</LinkText>
-      </Link>
-      <Link to={getLink('projects').url} style={{textDecoration: 'none'}}>
-        <LinkText>{getLink('projects').title}</LinkText>
-      </Link>  
-      <Link to={getLink('contact').url} style={{textDecoration: 'none'}}>
-        <LinkText> {getLink('contact').title} </LinkText>
-      </Link>
+      
+      <LinkText onClick={() => {viewNavigate(getLink('about').url)}}>{getLink("about").title}</LinkText>
+      <LinkText onClick={() => {viewNavigate(getLink('projects').url)}}>{getLink("projects").title}</LinkText>
+      <LinkText onClick={() => {viewNavigate(getLink('contact').url)}}>{getLink("contact").title}</LinkText>
+    
+
       </LinkHolder>
 
     </>
   )
 }
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+`
+
 const LinkHolder = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  font-family: "Vollkorn";
+  font-family: "Raleway";
+  font-weight: 200;
+  padding-bottom: 1px solid black;
+  cursor: pointer;
+  padding: 20px;
 `
 
 const LinkText = styled.div`
-  color: black;
+  color: white;
   padding-right: 10px;
+  &:hover {
+    font-weight: 600;
+  }
+  
 `
 
 const MyHeader = styled.h1`
-  font-family: "Vollkorn";
-  font-size: 34px;
+  font-family: "Raleway";
+  font-size: 24px;
+  cursor: pointer;
+  font-weight: 200;
+  &:hover {
+    font-weight: 600;
+  }
 `
 const MyText = styled.div`
-  font-family: "Vollkorn";
+  font-family: "Raleway";
   font-size: 24px;
   text-decoration: none;
 `

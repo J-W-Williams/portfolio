@@ -5,7 +5,6 @@ import { LanguageContext } from '../context/LanguageContext'
 import { useNavigate } from 'react-router-dom'
 
 
-
 const EnFrSelect = (currentPage) => {
 
     const { enFr, setEnFr } = useContext(LanguageContext);
@@ -35,25 +34,32 @@ const EnFrSelect = (currentPage) => {
 
   return (
     <>
-      <LanguageSelect onClick={toggleLanguage}><LanguageSelector>EN </LanguageSelector> | <LanguageSelector> FR</LanguageSelector></LanguageSelect>       
+      <LanguageSelect onClick={toggleLanguage}><LanguageSelector>[EN </LanguageSelector> | <LanguageSelector> FR]</LanguageSelector></LanguageSelect>       
     </>
   )
 }
 const LanguageSelector = styled.div`
-    
+font-family: "Raleway";
+font-size: 18px;
+cursor: pointer;    
+&:hover {
+    font-weight: 600;
+  }
 `
 
 const MyHeader = styled.h1`
-  font-family: "Vollkorn";
+  font-family: "Raleway";
   font-size: 34px;
+  
 `
 const LanguageSelect = styled.div`
-  font-family: "Vollkorn";
+  font-family: "Raleway";
   font-size: 12px;
   text-decoration: none;
   display: flex;
   flex-direction: row;
   justify-content: left;
+  font-weight: 200;
 `
 
 export default EnFrSelect;

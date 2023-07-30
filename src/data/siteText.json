@@ -1,7 +1,7 @@
 {
     "en": {
       "home": {
-        "title": "John Wrinch Williams: Web Development Portfolio",
+        "title": "John Wrinch Williams",
         "subtitle": "Thanks for stopping by!",
         "ctaButton": "Begin",
         "url": "/" 
@@ -22,7 +22,7 @@
     },
     "fr": {
       "home": {
-        "title": "John Wrinch Williams: Portfolio Développement Web",
+        "title": "John Wrinch Williams",
         "subtitle": "Découvrez les fonctionnalités étonnantes",
         "ctaButton": "Commencer",
         "url": "/fr" 
