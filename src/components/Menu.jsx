@@ -3,15 +3,11 @@ import { Link } from 'react-router-dom'
 import EnFrSelect from "./EnFrSelect";
 import { useContext } from 'react'
 import { LanguageContext } from '../context/LanguageContext'
-import siteText from "../data/siteText.json";
 import { useNavigate } from 'react-router-dom';
-import GlobalStyles from "./GlobalStyles";
-import { useParams } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+
 
 const Menu = ({currentPage}) => {
 
-  const testPage = location.pathname;
   const { enFr, setEnFr } = useContext(LanguageContext);
 
   const navigate = useNavigate();
@@ -69,7 +65,7 @@ const Menu = ({currentPage}) => {
     <AvatarHolder>
       <Avatar src = "/moi2.png" alt="Avatar of John Wrinch Williams" onClick={() => {viewNavigate(getLink('homepage').url)}}></Avatar>
     </AvatarHolder>
-      <MyHeader onClick={() => {viewNavigate(getLink('homepage').url)}}>{getTranslation('home', 'title')}</MyHeader>
+      <MyHeader onClick={() => {viewNavigate(getLink('homepage').url)}}>John Wrinch Williams</MyHeader>
       <EnFrSelect page={currentPage}/>
     </Wrapper>
     <LinkHolder>

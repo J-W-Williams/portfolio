@@ -7,29 +7,17 @@ export const LanguageProvider = ({ children }) => {
    
     const [enFr, setEnFr] = useState(() => {
         
-        // is there a language set in sessionStorage?
-       
-        console.log("hello from Language Provider.")
-        console.log("checking for session storage...");
+        // is there a language already set in sessionStorage?
         const currentLanguage = sessionStorage.getItem("currentLanguage");
 
-        console.log("LanguageProvider says currentLanguage:", currentLanguage);
-
-        // return it if so; if not, it's first load, so set to English.
+        // return it if so; if not, return null
         if (currentLanguage) {
-            console.log("LanguageProvider: I'm returning", currentLanguage);
-            return currentLanguage;
-            
+            return currentLanguage;            
         } else {
-            console.log("languageProvider: no language in storage, setting to English");
             return "en"
             // set storage here?
             // sessionStorage.setItem("currentLanguage")
         };
-        // maybe this above line is messing me up.
-
-
-
     })
 
     return (

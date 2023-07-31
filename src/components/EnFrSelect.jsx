@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { LanguageContext } from '../context/LanguageContext'
 import { useNavigate } from 'react-router-dom'
-import siteText from "../data/siteText.json";
 
 const EnFrSelect = (currentPage) => {
 
@@ -17,7 +16,7 @@ const EnFrSelect = (currentPage) => {
     const viewNavigate = (newRoute) => {
       // Navigate to the new route
       if (!document.startViewTransition) {
-        // viewNavigate not available on this device
+        // viewNavigate not available on this device.
         // default to normal navigate
         return navigate(newRoute);
       } else {
@@ -26,40 +25,22 @@ const EnFrSelect = (currentPage) => {
         });
       }
     };
-    // get current language
+  
        
-      // check Context
-    // make this a Ternary
     const toggleLanguage = () => {
-    //console.log("hello from toggleLanguage.  current language:", enFr);
-    if (enFr === "fr") {
-        setEnFr("en");
-        //enFr = "en";
-        //console.log("From toggle: changed language to en, but it's not available here yet:", enFr);
-    } else if (enFr === "en")  {
+
+      if (enFr === "fr") {
+          setEnFr("en");
+      } else if (enFr === "en")  {
         setEnFr("fr");
-        //enFr = "fr";
-      //  console.log("From toggle: changed language to fr, but it's not available here yet:", enFr);
-    }
     
-    // check storage; if nothing, add current language to it
-
-    // actually do want to set it on change.  this is so the correct language will stay if the page is refreshed.
+      }
+    
+    // want to set this on change.  this is so the correct language will remain if the page is refreshed.
     window.sessionStorage.setItem("currentLanguage", enFr );
-
-    // goal is: refresh or manual page entry: language maintained
-
-    // refresh working
-
-
-    // console.log("EnFrSelect, currentPage:", currentPage);
-
-
-
     
     const getLink = (linkTo) => {
 
-      console.log("lookng up: " + linkTo);
       const languageLinks = {
         homepage: {
           en: { url: '/', title: 'Homepage' },
@@ -90,14 +71,8 @@ const EnFrSelect = (currentPage) => {
       }
     }
 
-  
-    // toggle URL 
-    // console.log("EnFrSelect: currentPage:", currentPage.page);
-    
-    //let goToPage = getLink(currentPage.page);
-    // let goToPageURL = goToPage.url;
+    // a bit brute force but it works
     let pageNow = currentPage.page;
-    console.log("pageNow:", currentPage.page)
 
     if (pageNow === "homepage") {
       goingTo = "/fr/";
@@ -145,7 +120,6 @@ const EnFrSelect = (currentPage) => {
 const LanguageSelector = styled.div`
 font-family: "Raleway";
 font-size: 18px;
-/* font-size: 1vw; */
 cursor: pointer;    
 &:hover {
     font-weight: 600;

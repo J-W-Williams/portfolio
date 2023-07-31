@@ -19,13 +19,11 @@ const Projects = () => {
     fetch('https://random-word-api.herokuapp.com/word')
     .then((response) => response.json())
     .then((parsed) => {
-      console.log("random word:", parsed)
       setLoading(false);
       setRandomWord(parsed);
     })
     .catch((error) => {
       console.error('Error fetching data:', error);
-      //setLoading(false);
     });
 
 }, []);
@@ -154,7 +152,7 @@ line-height: 20px;
 `
 
 const Wrapper = styled.div`
-    /* background-image: url("./src/assets/bg2.jpg"); */
+   
   background-color: #1f1f1f;
 
   height: 100vh; 

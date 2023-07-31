@@ -18,7 +18,6 @@ const Projets = () => {
     fetch('https://trouve-mot.fr/api/random')
     .then((response) => response.json())
     .then((parsed) => {
-      console.log("mot:", parsed[0].name)
       setLoading(false);
       setRandomWord(parsed[0].name);
     })
@@ -149,7 +148,7 @@ line-height: 20px;
 `
 
 const Wrapper = styled.div`
-    /* background-image: url("./src/assets/bg2.jpg"); */
+
   background-color: #1f1f1f;
 
   height: 100vh; 

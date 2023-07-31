@@ -1,7 +1,6 @@
 import Menu from "./Menu";
 import { styled } from "styled-components";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+
 
 const About = () => {
 
@@ -12,8 +11,7 @@ const About = () => {
 
       <Wrapper>
       <Menu currentPage="about" />
-      {/* have thought bubbles bubbling up from the portrait image */}
-      {/* also API call to mutate face */}
+
       <MyHeader>Who is this John person anyway?</MyHeader>
 
     <PortraitAndStack>
