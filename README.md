@@ -36,6 +36,7 @@ To address various requirements of this Workshop (to try and apply everything we
 * Visual cue in language selector or create a unique UI element
 * It'd be cool if hitting "back" in the browser would cause the transition animation to play in reverse
 * Consider using a specific flow of greetings on the homepage instead of randomized messages
+* French translation definitely needs a pass, when this goes live I'll have expert assistance.
 * Definitely look into the plugin ```react-i18next``` for translation.  It looks amazing.
   
 ## Conclusion
