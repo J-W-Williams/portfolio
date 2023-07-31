@@ -49,7 +49,7 @@ const Projects = () => {
                   alt="Gameplay screenshot of the game Wordel">
               </ImageHolder>
               <ProjectDescription>
-                For this project, we were tasked with understanding collision detection.  I had the idea to subvert Wordle into this.  Made in vanilla JavaScript / CSS. 
+                For this project, we were tasked with understanding collision detection (desktop only).  I had the idea to turn Wordle into this.  Made in vanilla JavaScript / CSS. 
                 {!loading ? <RandomWord> Speaking of words, here is a random one: <BoldSpan>{randomWord}</BoldSpan>.</RandomWord> : <></> }
                 
                 
@@ -65,6 +65,17 @@ const Projects = () => {
               </ImageHolder>
               <ProjectDescription>
                   The next incredible thing will appear here.  Please wait patiently and don't forget to refresh often.  Your patience will surely be rewarded... soon
+                </ProjectDescription>
+        </ProjectHolder>
+        <ProjectHolder>
+              <ImageHolder
+                src="/placeholder.jpg"
+                alt="Placeholder image for projects to come"
+              >
+
+              </ImageHolder>
+              <ProjectDescription>
+                  Same here.  Coming soon!
                 </ProjectDescription>
         </ProjectHolder>
         </ProjectsWrapper>  
@@ -96,6 +107,7 @@ const ProjectDescription = styled.div`
 const ProjectsWrapper = styled.div`
   margin-top: 10px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: left;
   justify-content: left; 
@@ -105,6 +117,7 @@ const ProjectHolder = styled.div`
   width: 300px;
   transition: transform 250ms;
   margin-right: 15px;
+  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;

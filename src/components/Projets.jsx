@@ -62,6 +62,17 @@ const Projets = () => {
                 La prochaine chose incroyable va apparaîte ici.  Veuillez attendre patiemment et n'oubliez pas de rafraîchir la page souvent.  Bientôt...
               </ProjectDescription>
       </ProjectHolder>
+      <ProjectHolder>
+            <ImageHolder
+              src="/placeholder.jpg"
+              alt="Image substititive pour des projet à venir"
+            >
+
+            </ImageHolder>
+            <ProjectDescription>
+               Même chose ici.. À venir!
+              </ProjectDescription>
+      </ProjectHolder>
       </ProjectsWrapper>  
     </Wrapper>
 
@@ -91,6 +102,7 @@ const ProjectDescription = styled.div`
 const ProjectsWrapper = styled.div`
   margin-top: 10px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-items: left;
   justify-content: left; 
