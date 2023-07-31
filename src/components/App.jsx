@@ -17,8 +17,6 @@ import ContactFR from "./ContactFR";
 
 const App = () =>  {
 
-  // do something cool here
-
   return (
     <>
       <GlobalStyles />

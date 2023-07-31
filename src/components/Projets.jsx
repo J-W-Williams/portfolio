@@ -112,6 +112,7 @@ const ProjectHolder = styled.div`
   width: 300px;
   transition: transform 250ms;
   margin-right: 15px;
+  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -135,7 +136,7 @@ const MyHeader = styled.div`
   font-family: "Raleway";
   font-weight: 240;
   color: White;
-  font-size: 80px;
+  font-size: 9vw;
   padding: 20px;
 `
 const MainContent = styled.p`

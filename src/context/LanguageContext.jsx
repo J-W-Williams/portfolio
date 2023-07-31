@@ -13,16 +13,22 @@ export const LanguageProvider = ({ children }) => {
         console.log("checking for session storage...");
         const currentLanguage = sessionStorage.getItem("currentLanguage");
 
-        console.log("currentLanguage:", currentLanguage);
-        // Step 2: Parse stored data
-        // const asJSON = JSON.parse(currentLanguage);
-        
-        // on first load
-        // Step 3: If so, return it. Else return English.
-        if (currentLanguage) {return currentLanguage} else {return "en"};
+        console.log("LanguageProvider says currentLanguage:", currentLanguage);
+
+        // return it if so; if not, it's first load, so set to English.
+        if (currentLanguage) {
+            console.log("LanguageProvider: I'm returning", currentLanguage);
+            return currentLanguage;
+            
+        } else {
+            console.log("languageProvider: no language in storage, setting to English");
+            return "en"
+            // set storage here?
+            // sessionStorage.setItem("currentLanguage")
+        };
         // maybe this above line is messing me up.
 
-        // actually navigate to the page / change languages.
+
 
     })
 

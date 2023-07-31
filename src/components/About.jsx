@@ -103,7 +103,7 @@ const MyHeader = styled.div`
   font-family: "Raleway";
   font-weight: 400;
   color: White;
-  font-size: 80px;
+  font-size: 9vw;
   padding: 20px;
 `
 

@@ -2,15 +2,9 @@ import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 
 const GreetingComponent = (messages) => {
-  // const greetingMessages = ["integrator", "multimedia explorer", "future teammate", "JavaScript fan", "full-stack developer", "constant learner", 
-  // "programmer", "mind-mapper", "thoughtful person"]
-  //console.log("greetingMessages:", greetingMessages);
-
+ 
   const greetingMessages = messages.greetingMessages;
-   //console.log("greetingMessages:", greetingMessages);
-
-  // try non random, it's too chaotic
-
+ 
   const [shuffleMessage, setShuffleMessage] = useState("integrator");
   const [isMessageVisible, setMessageVisible] = useState(true); 
   
@@ -21,14 +15,9 @@ const GreetingComponent = (messages) => {
       const randomIndex = Math.floor(Math.random() * greetingMessages.length);
 
       setShuffleMessage(greetingMessages[randomIndex]);
-    //   greetingIndex = greetingIndex + 1;
-    //   console.log("greetingIndex:", greetingIndex);
-    //   if (greetingIndex = greetingMessages.length) {
-    //     greetingIndex = 0;
-    //   };
+ 
       setMessageVisible(true);
 
-    //   const visibilityDuration = 3000;
       setTimeout(() => {
         setMessageVisible(false);
       }, 1000);

@@ -5,12 +5,9 @@ import { LanguageContext } from '../context/LanguageContext'
 import { useNavigate } from 'react-router-dom'
 import siteText from "../data/siteText.json";
 
-
 const EnFrSelect = (currentPage) => {
 
-    // just want it to navigate to the paired page
-    // 
-
+    // use Context
     const { enFr, setEnFr } = useContext(LanguageContext);
     const navigate = useNavigate();    
     let goingTo = "";
@@ -20,6 +17,8 @@ const EnFrSelect = (currentPage) => {
     const viewNavigate = (newRoute) => {
       // Navigate to the new route
       if (!document.startViewTransition) {
+        // viewNavigate not available on this device
+        // default to normal navigate
         return navigate(newRoute);
       } else {
         return document.startViewTransition(() => {
@@ -49,6 +48,10 @@ const EnFrSelect = (currentPage) => {
     window.sessionStorage.setItem("currentLanguage", enFr );
 
     // goal is: refresh or manual page entry: language maintained
+
+    // refresh working
+
+
     // console.log("EnFrSelect, currentPage:", currentPage);
 
 
@@ -130,27 +133,19 @@ const EnFrSelect = (currentPage) => {
       window.sessionStorage.setItem("currentLanguage", "en" );
     }
     
-   
-    console.log("goingTo:", goingTo);
-    ; 
-
-    //console.log("goToPage:", goToPage);
-    // console.log("goToPage.url:", goToPageURL);
-    // console.log("typeOf goToPage.url", typeof(goToPageURL));
-    
-    // console.log("navigating to...", goToPageURL)
      viewNavigate(goingTo);
 }    
 
   return (
     <>
-      <LanguageSelect onClick={toggleLanguage}><LanguageSelector>[EN / FR]</LanguageSelector></LanguageSelect>       
+      <LanguageSelect onClick={toggleLanguage}><LanguageSelector>EN | FR</LanguageSelector></LanguageSelect>       
     </>
   )
 }
 const LanguageSelector = styled.div`
 font-family: "Raleway";
 font-size: 18px;
+/* font-size: 1vw; */
 cursor: pointer;    
 &:hover {
     font-weight: 600;

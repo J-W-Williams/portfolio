@@ -11,23 +11,8 @@ import { useLocation } from 'react-router-dom';
 
 const Menu = ({currentPage}) => {
 
-  // need the Menu to be self-sufficient, without receiving currentPage.
-  // that way it can render the correct language based on the page
-  // in the case where the user manually navigates to a page.
   const testPage = location.pathname;
   const { enFr, setEnFr } = useContext(LanguageContext);
-
-  // catch if user manually navigates here
-  // after changing language
-  console.log("testPage with useLocation:", testPage);
-  if (testPage === "/") {
-    setEnFr("en");
-    // this works but throws an error
-    // figure this out.
-  }
-
- 
- console.log("hello from menu. currentLanguage:", enFr);
 
   const navigate = useNavigate();
 
@@ -75,15 +60,14 @@ const Menu = ({currentPage}) => {
       };
     }
   }
-// console.log("siteText:", siteText);  
-// need to highlight currently-selected menu item
+
 
   return (
     <>
     <Wrapper>
 
     <AvatarHolder>
-      <Avatar src = "/moi2.png" alt="Avatar of John Wrinch Williams"></Avatar>
+      <Avatar src = "/moi2.png" alt="Avatar of John Wrinch Williams" onClick={() => {viewNavigate(getLink('homepage').url)}}></Avatar>
     </AvatarHolder>
       <MyHeader onClick={() => {viewNavigate(getLink('homepage').url)}}>{getTranslation('home', 'title')}</MyHeader>
       <EnFrSelect page={currentPage}/>
@@ -104,6 +88,7 @@ const Menu = ({currentPage}) => {
 const AvatarHolder = styled.div`
   border-radius: 40px;
   width: 80px;
+  cursor: pointer;
   `
 
 const Avatar = styled.img`
@@ -122,6 +107,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  background-color: black;
 `
 
 const LinkHolder = styled.div`
@@ -133,6 +119,7 @@ const LinkHolder = styled.div`
   padding-bottom: 1px solid black;
   cursor: pointer;
   padding: 20px;
+  background-color: #181818;
 `
 
 const LinkText = styled.div`

@@ -10,21 +10,14 @@ const Apropos = () => {
 
     <Wrapper>
     <Menu currentPage="apropos" />
-    {/* have thought bubbles bubbling up from the portrait image */}
-    {/* also API call to mutate face */}
-    <MyHeader>Mais c'est qui cette personne nommé John?</MyHeader>
-    {/* idea: have many different greetings when you get here. */}
-  {/* Greetings!       */}
-  {/* It could fade out & in between many of them using a .... setInteval! */}
+
+    <MyHeader>Mais c'est qui John?</MyHeader>
+    <PortraitAndStack>
   <PortraitHolder>
     <Portrait src = "/moi2.png" alt="Photo of John Wrinch Williams"></Portrait>
   </PortraitHolder>
-    <MainContent>
-    Bonjour!  Je suis John Wrinch Williams, un développeur web basé à Montréal (QC).  J'utilise mon deuxième nom car les John Williams, nous sommes nombreux!  Mais il y'a seulement un moi.  Explorez mon site, et si jamais je peux vous aider avec quelque-chose, n'hesitez pas de me contacter!
-    </MainContent>
-    <MainContent>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu nisi dolor. Nullam gravida, eros et aliquet tempor, diam purus rutrum dui, ut venenatis eros neque in metus. Maecenas commodo lobortis nunc, ut ultrices ipsum facilisis et. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</MainContent>
-    <MainContent>Voici les technologies Web que j'utilisent actuellment:
-    </MainContent>
+   
+   
 
 
     <IconWrapper>
@@ -70,11 +63,24 @@ const Apropos = () => {
    </IconAndTextHolder>
 
  </IconWrapper>
-
+ </PortraitAndStack>
+ <MainContent>
+  
+    Bonjour!  Je suis John Wrinch Williams, un développeur web basé à Montréal (QC). Les technologies que j'utilise actuellement se trouvent en haut.  J'utilise mon deuxième nom car les John Williams, nous sommes nombreux!  Mais il y'a seulement un moi.  Explorez mon site, et si jamais je peux vous aider avec quelque-chose, n'hesitez pas de me contacter!
+    </MainContent>
   </Wrapper>
   </>
   )
 }
+
+
+const PortraitAndStack = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+`
+
 
 const IconAndTextHolder = styled.div`
   display: flex;
@@ -94,7 +100,7 @@ const MyHeader = styled.div`
   font-family: "Raleway";
   font-weight: 400;
   color: White;
-  font-size: 80px;
+  font-size: 9vw;
   padding: 20px;
 `
 

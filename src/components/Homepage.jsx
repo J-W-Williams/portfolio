@@ -1,99 +1,74 @@
 import { styled } from 'styled-components'
 import Menu from './Menu'
 import RandomGreeting from './RandomGreeting'
-import { useEffect } from 'react'
-import { useState } from 'react'
 
 
 const Homepage = () => {
 
   const greetingMessages = ["integrator", "multimedia explorer", "future teammate", "JavaScript fan", "full-stack developer", "constant learner", "programmer", "mind-mapper", "thoughtful person"]
 
-
-  //let shuffleMessage = "old-school programmer";
-
-  const [shuffleMessage, setShuffleMessage] = useState("old-school programmer");
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setShuffleMessage(greetingMessages[Math.floor(Math.random() * greetingMessages.length)]);
-  
-  //     return {shuffleMessage};
-  //   }, 3000);
-  
-  //   return () => clearInterval(interval);
-  // }, [shuffleMessage]);
-
-  
-
   return (
     <>
     <Wrapper>
-      <Menu currentPage="homepage" />
+      <Menu currentPage={"homepage"} />
 
       <HeaderWrapper>
         <MyHeader>
           Web developer & 
-          {/* <RandomMessage>{shuffleMessage}</RandomMessage> */}
           <RandomGreeting greetingMessages={greetingMessages}/>
         </MyHeader>
       </HeaderWrapper>
-        {/* idea: generate new logo via AI API */}
-        <LogoHolder><LogoImg src="/jww.png" alt="Logo of John Wrinch Williams, also known as jww"></LogoImg></LogoHolder>
+      
+
+      <IconWrapper>
+        <ImgWrapper src="/email.png"></ImgWrapper>
+        <ImgWrapper src="/linkedIn.png"></ImgWrapper>
+        <ImgWrapper src="/github.png"></ImgWrapper>
+      </IconWrapper>
+
       </Wrapper> 
     </>   
   )
 }
 
-const RandomMessage = styled.div`
-  
-`
-
-
-const LogoImg = styled.img`
-  width: 100px;
-  border-radius: 25px;
-`
-
-const LogoHolder = styled.div`
+const IconWrapper = styled.div`
   display: flex;
-  justify-content: right;
-  align-items: center;
-  margin-right: 20px;
-`
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;  
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  `
 
+const ImgWrapper = styled.img`
+  width: 50px;
+  &:hover {
+    scale: 1.15;
+  }
+  margin-left: 40px;
+  margin-right: 30px;
+  cursor: pointer;
+`
 
 const HeaderWrapper = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center
-
+  align-items: center;
+  margin-top: 5%;
 `
 
 const MyHeader = styled.div`
   font-family: "Raleway";
   font-weight: 400;
   color: White;
-  font-size: 80px;
-  padding: 20px;
+  /* font-size: 80px; */
+  font-size: 9vw;
+  padding: 20px;  
 `
 
-const MainContent = styled.p`
-font-family: "Raleway";
-font-weight: 300;
-color: white;
-font-size: 12px;
-padding: 20px;
-line-height: 20px;
-`
-
-const Wrapper=styled.div`
-    /* background-image: url("./src/assets/bg2.jpg"); */
-  background-size: 100% auto; 
+const Wrapper = styled.div`
   height: 100vh; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  background-color: #1f1f1f;
 `
 
 export default Homepage
