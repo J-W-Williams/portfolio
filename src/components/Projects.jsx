@@ -11,7 +11,7 @@ const Projects = () => {
   const navigate = useNavigate();
   // use props for something here
 
-  // get OED word of the day
+  // get random word 
   const [loading, setLoading] = useState(true); 
   const [randomWord, setRandomWord] = useState("");
 
@@ -25,11 +25,11 @@ const Projects = () => {
     })
     .catch((error) => {
       console.error('Error fetching data:', error);
-      setLoading(false);
+      //setLoading(false);
     });
 
 }, []);
-// end of word of the day
+// end random word
 
   return (
     <>

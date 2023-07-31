@@ -3,11 +3,32 @@ import { BrowserRouter } from 'react-router-dom'
 import { styled } from 'styled-components'
 import Menu from './Menu'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const Projets = () => {
 
   const navigate = useNavigate();
   // use props for something here
+
+  // get random word en français
+  const [loading, setLoading] = useState(true); 
+  const [randomWord, setRandomWord] = useState("");
+
+  useEffect(() => {
+    fetch('https://trouve-mot.fr/api/random')
+    .then((response) => response.json())
+    .then((parsed) => {
+      console.log("mot:", parsed[0].name)
+      setLoading(false);
+      setRandomWord(parsed[0].name);
+    })
+    .catch((error) => {
+      console.error('Error fetching data:', error);
+      setLoading(false);
+    });
+
+}, []);
+// end random word
 
   return (
     <>
@@ -27,7 +48,7 @@ const Projets = () => {
                 alt="Prise d'écran du jeu Wordel">
             </ImageHolder>
             <ProjectDescription>
-              Pour ce projet, notre tâche était de mieux comprendre la détection de collision.  J'avais l'idée de transformer Wordle un peu.. C'est fait in JavaScript Vanille + CSS.
+              Pour ce projet, notre tâche était de mieux comprendre la détection de collision.  J'avais l'idée de transformer Wordle un peu.. C'est fait in JavaScript Vanille + CSS. {!loading ? <RandomWord> En parlant des mots, voici un mot aléatoire: <BoldSpan>{randomWord}</BoldSpan>.</RandomWord> : <></> }
             </ProjectDescription>
       </ProjectHolder>
       <ProjectHolder>
@@ -48,6 +69,15 @@ const Projets = () => {
   </>
   )
 }
+
+const RandomWord = styled.span`
+  font-family: "Raleway";
+  font-size: 12px;
+`
+
+const BoldSpan = styled.span`
+  font-weight: bold;
+`
 
 const ProjectDescription = styled.div`
   
