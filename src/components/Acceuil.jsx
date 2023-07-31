@@ -1,9 +1,13 @@
 import Menu from './Menu'
 import { styled } from 'styled-components'
+import { useState } from 'react'
+import RandomGreeting from './RandomGreeting'
 
 const Acceuil = () => {
 
   // use props for something here
+
+  const greetingMessages = ["intégrateur", "explorateur multimédia", "futur collègue", "amateur de JavaScript", "developer full-stack", "autodidacte", "programmeur", "traceur", "penseur"]
 
   return (
     <>
@@ -12,7 +16,8 @@ const Acceuil = () => {
      
       <HeaderWrapper>
         <MyHeader>
-          Développeur Web & explorateur multmédia
+          Développeur Web &
+          <RandomGreeting greetingMessages={greetingMessages}/>
         </MyHeader>
       </HeaderWrapper>
         {/* idea: generate new logo via AI API */}

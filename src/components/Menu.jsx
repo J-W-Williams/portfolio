@@ -60,7 +60,7 @@ const Menu = ({currentPage}) => {
       },
       about: {
         en: { url: '/about', title: 'About' },
-        fr: { url: '/fr/apropos', title: 'A propos' },
+        fr: { url: '/fr/apropos', title: 'À propos' },
       },
       contact: {
         en: { url: '/contact', title: 'Contact' },

@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 
-const GreetingComponent = () => {
-  const greetingMessages = ["integrator", "multimedia explorer", "future teammate", "JavaScript fan", "full-stack developer", "constant learner", 
-  "programmer", "mind-mapper", "thoughtful person"]
+const GreetingComponent = (messages) => {
+  // const greetingMessages = ["integrator", "multimedia explorer", "future teammate", "JavaScript fan", "full-stack developer", "constant learner", 
+  // "programmer", "mind-mapper", "thoughtful person"]
+  //console.log("greetingMessages:", greetingMessages);
+
+  const greetingMessages = messages.greetingMessages;
+   //console.log("greetingMessages:", greetingMessages);
 
   // try non random, it's too chaotic
 

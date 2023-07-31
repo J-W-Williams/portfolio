@@ -24,7 +24,7 @@ const Projets = () => {
     })
     .catch((error) => {
       console.error('Error fetching data:', error);
-      setLoading(false);
+     // setLoading(false);
     });
 
 }, []);

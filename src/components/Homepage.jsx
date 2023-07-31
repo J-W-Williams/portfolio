@@ -7,7 +7,9 @@ import { useState } from 'react'
 
 const Homepage = () => {
 
-  const greetingMessages = ["integrator", "multimedia explorer", "future teammate", "JavaScript fan", "full-stack developer", "constant learner"]
+  const greetingMessages = ["integrator", "multimedia explorer", "future teammate", "JavaScript fan", "full-stack developer", "constant learner", "programmer", "mind-mapper", "thoughtful person"]
+
+
   //let shuffleMessage = "old-school programmer";
 
   const [shuffleMessage, setShuffleMessage] = useState("old-school programmer");
@@ -33,7 +35,7 @@ const Homepage = () => {
         <MyHeader>
           Web developer & 
           {/* <RandomMessage>{shuffleMessage}</RandomMessage> */}
-          <RandomGreeting />
+          <RandomGreeting greetingMessages={greetingMessages}/>
         </MyHeader>
       </HeaderWrapper>
         {/* idea: generate new logo via AI API */}
