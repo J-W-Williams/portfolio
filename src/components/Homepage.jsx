@@ -19,7 +19,7 @@ const Homepage = () => {
         </MyHeader>
       </HeaderWrapper>
       
-
+      
       <IconWrapper>
         <ImgWrapper src="/email.png"></ImgWrapper>
         <ImgWrapper src="/linkedIn.png"></ImgWrapper>
