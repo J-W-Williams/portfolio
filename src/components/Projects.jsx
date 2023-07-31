@@ -3,12 +3,33 @@ import { BrowserRouter } from 'react-router-dom'
 import { styled } from 'styled-components'
 import Menu from './Menu'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 
 const Projects = () => {
 
   const navigate = useNavigate();
   // use props for something here
+
+  // get OED word of the day
+  const [loading, setLoading] = useState(true); 
+  const [randomWord, setRandomWord] = useState("");
+
+  useEffect(() => {
+    fetch('https://random-word-api.herokuapp.com/word')
+    .then((response) => response.json())
+    .then((parsed) => {
+      console.log("random word:", parsed)
+      setLoading(false);
+      setRandomWord(parsed);
+    })
+    .catch((error) => {
+      console.error('Error fetching data:', error);
+      setLoading(false);
+    });
+
+}, []);
+// end of word of the day
 
   return (
     <>
@@ -28,7 +49,11 @@ const Projects = () => {
                   alt="Gameplay screenshot of the game Wordel">
               </ImageHolder>
               <ProjectDescription>
-                For this project, we were tasked with understanding collision detection.  I had the idea to subvert Wordle into this.  Made in vanilla JavaScript / CSS
+                For this project, we were tasked with understanding collision detection.  I had the idea to subvert Wordle into this.  Made in vanilla JavaScript / CSS. 
+                {!loading ? <RandomWord> Speaking of words, here is a random one: <BoldSpan>{randomWord}</BoldSpan>.</RandomWord> : <></> }
+                
+                
+                
               </ProjectDescription>
         </ProjectHolder>
         <ProjectHolder>
@@ -49,6 +74,15 @@ const Projects = () => {
     </>
   )
 }
+
+const RandomWord = styled.span`
+  font-family: "Raleway";
+  font-size: 12px;
+`
+
+const BoldSpan = styled.span`
+  font-weight: bold;
+`
 
 const ProjectDescription = styled.div`
   
