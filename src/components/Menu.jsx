@@ -11,7 +11,7 @@ import { useLocation } from 'react-router-dom';
 
 const Menu = ({currentPage}) => {
 
-  // need the Manu to be self-sufficient, without receiving currentPage.
+  // need the Menu to be self-sufficient, without receiving currentPage.
   // that way it can render the correct language based on the page
   // in the case where the user manually navigates to a page.
   const testPage = location.pathname;
@@ -27,7 +27,6 @@ const Menu = ({currentPage}) => {
   }
 
  
-
  console.log("hello from menu. currentLanguage:", enFr);
 
   const navigate = useNavigate();

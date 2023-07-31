@@ -27,22 +27,68 @@ const Apropos = () => {
     </MainContent>
 
 
-  <IconWrapper>
- {/* For icons, need title below.  tiny flex UI design. */}
-    <ImgWrapper src="/html5.png" alt="HTML5"></ImgWrapper>
-    <ImgWrapper src="/css3.png" alt="CSS3"></ImgWrapper>
-    <ImgWrapper src="/javascript.png" alt="JavaScript"></ImgWrapper>
-    <ImgWrapper src="/react.png" alt="React"></ImgWrapper>
-    <ImgWrapper src="/mongo.svg" alt="MongoDB"></ImgWrapper>
-    <ImgWrapper src="/node.png" alt="NodeJS"></ImgWrapper>
-    <ImgWrapper src="/insomnia.png" alt="Insomnia"></ImgWrapper>
-    <ImgWrapper src="/vscode.png" alt="Visual Studio Code"></ImgWrapper>
-  </IconWrapper>
+    <IconWrapper>
+   
+   <IconAndTextHolder>
+     <ImgWrapper src="/html5.png" alt="HTML5"></ImgWrapper>
+     <IconDescription>HTML5</IconDescription>
+   </IconAndTextHolder>
+   
+   <IconAndTextHolder>
+   <ImgWrapper src="/css3.png" alt="CSS3"></ImgWrapper>
+   <IconDescription>CSS3</IconDescription>
+   </IconAndTextHolder>
+  
+   <IconAndTextHolder>
+     <ImgWrapper src="/javascript.png" alt="JavaScript"></ImgWrapper>
+     <IconDescription>JavaScript</IconDescription>
+   </IconAndTextHolder>
+
+   <IconAndTextHolder>
+     <ImgWrapper src="/react.png" alt="React"></ImgWrapper>
+     <IconDescription>React</IconDescription>
+   </IconAndTextHolder>
+
+   <IconAndTextHolder>
+     <ImgWrapper src="/mongo.svg" alt="MongoDB"></ImgWrapper>
+     <IconDescription>MongoDB</IconDescription>
+   </IconAndTextHolder>
+   
+   <IconAndTextHolder>
+     <ImgWrapper src="/node.png" alt="NodeJS"></ImgWrapper>
+     <IconDescription>node.js</IconDescription>
+   </IconAndTextHolder>
+
+   <IconAndTextHolder>
+   <ImgWrapper src="/insomnia.png" alt="Insomnia"></ImgWrapper>
+     <IconDescription>Insomnia</IconDescription>
+   </IconAndTextHolder>
+
+   <IconAndTextHolder>
+   <ImgWrapper src="/vscode.png" alt="Visual Studio Code"></ImgWrapper>
+     <IconDescription>VS Code</IconDescription>
+   </IconAndTextHolder>
+
+ </IconWrapper>
 
   </Wrapper>
   </>
   )
 }
+
+const IconAndTextHolder = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
+const IconDescription = styled.div`
+  font-family: "Raleway";
+  font-size: 10px;
+  padding-top: 3px;
+
+`
 
 const MyHeader = styled.div`
   font-family: "Raleway";

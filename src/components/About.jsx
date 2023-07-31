@@ -15,37 +15,89 @@ const About = () => {
       {/* have thought bubbles bubbling up from the portrait image */}
       {/* also API call to mutate face */}
       <MyHeader>Who is this John person anyway?</MyHeader>
-      {/* idea: have many different greetings when you get here. */}
-    {/* Greetings!       */}
-    {/* It could fade out & in between many of them using a .... setInteval! */}
+
+    <PortraitAndStack>
     <PortraitHolder>
       <Portrait src = "/moi2.png" alt="Photo of John Wrinch Williams"></Portrait>
     </PortraitHolder>
-      <MainContent>
-      I'm John Wrinch Williams, a web developer based in Montreal (QC).  I use my middle name because we John Williamses are many!  But there's only one of me.  Please have a look around and if there's anything I can help you with, please don't hesitate to reach out directly.
-      </MainContent>
-      <MainContent>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu nisi dolor. Nullam gravida, eros et aliquet tempor, diam purus rutrum dui, ut venenatis eros neque in metus. Maecenas commodo lobortis nunc, ut ultrices ipsum facilisis et. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</MainContent>
-      <MainContent>Here is the tech stack I'm currently working with:
-      </MainContent>
-
 
     <IconWrapper>
-   {/* For icons, need title below.  tiny flex UI design. */}
-      <ImgWrapper src="/html5.png" alt="HTML5"></ImgWrapper>
-      <ImgWrapper src="/css3.png" alt="CSS3"></ImgWrapper>
-      <ImgWrapper src="/javascript.png" alt="JavaScript"></ImgWrapper>
-      <ImgWrapper src="/react.png" alt="React"></ImgWrapper>
-      <ImgWrapper src="/mongo.svg" alt="MongoDB"></ImgWrapper>
-      <ImgWrapper src="/node.png" alt="NodeJS"></ImgWrapper>
+   
+      <IconAndTextHolder>
+        <ImgWrapper src="/html5.png" alt="HTML5"></ImgWrapper>
+        <IconDescription>HTML5</IconDescription>
+      </IconAndTextHolder>
+      
+      <IconAndTextHolder>
+        <ImgWrapper src="/css3.png" alt="CSS3"></ImgWrapper>
+        <IconDescription>CSS3</IconDescription>
+      </IconAndTextHolder>
+     
+      <IconAndTextHolder>
+        <ImgWrapper src="/javascript.png" alt="JavaScript"></ImgWrapper>
+        <IconDescription>JavaScript</IconDescription>
+      </IconAndTextHolder>
+
+      <IconAndTextHolder>
+        <ImgWrapper src="/react.png" alt="React"></ImgWrapper>
+        <IconDescription>React</IconDescription>
+      </IconAndTextHolder>
+
+      <IconAndTextHolder>
+        <ImgWrapper src="/mongo.svg" alt="MongoDB"></ImgWrapper>
+        <IconDescription>MongoDB</IconDescription>
+      </IconAndTextHolder>
+      
+      <IconAndTextHolder>
+        <ImgWrapper src="/node.png" alt="NodeJS"></ImgWrapper>
+        <IconDescription>node.js</IconDescription>
+      </IconAndTextHolder>
+   
+      <IconAndTextHolder>
       <ImgWrapper src="/insomnia.png" alt="Insomnia"></ImgWrapper>
+        <IconDescription>Insomnia</IconDescription>
+      </IconAndTextHolder>
+ 
+      <IconAndTextHolder>
       <ImgWrapper src="/vscode.png" alt="Visual Studio Code"></ImgWrapper>
+        <IconDescription>VS Code</IconDescription>
+      </IconAndTextHolder>
+   
     </IconWrapper>
+    </PortraitAndStack> 
+      <MainContent>
+      I'm John Wrinch Williams, a web developer based in Montreal (QC).  You can see my tech stack above.  I use my middle name because we John Williamses are many!  But there's only one of me.  Please have a look around and if there's anything I can help you with, please don't hesitate to reach out directly!
+      </MainContent>
+
+    
 
     </Wrapper>
     </>
 
   )
 }
+
+const PortraitAndStack = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+`
+
+const IconAndTextHolder = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
+const IconDescription = styled.div`
+  font-family: "Raleway";
+  font-size: 10px;
+  padding-top: 3px;
+
+`
 
 const MyHeader = styled.div`
   font-family: "Raleway";
@@ -96,7 +148,7 @@ const ImgWrapper = styled.img`
 const IconWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   padding: 20px;
   align-items: center;

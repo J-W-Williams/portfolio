@@ -51,11 +51,33 @@ const ContactFR = () => {
 
         </ul>  
     </form>
+    <SubmitButton type="submit">Soumettre</SubmitButton>
     </FormWrapper>
+    <IconWrapper>
+      <ImgWrapper src="/email.png"></ImgWrapper>
+      <ImgWrapper src="/linkedIn.png"></ImgWrapper>
+      <ImgWrapper src="/github.png"></ImgWrapper>
+    </IconWrapper>
     </Wrapper>
     </>
   )
 }
+
+
+const SubmitButton = styled.button`
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  width: 320px;
+  margin-bottom: 10px;
+  border: none;
+  background-color: grey;
+  color: white;
+  font-family: "Raleway";
+  &:hover {
+    background-color: darkgrey;
+  }
+`
 
 const FormWrapper = styled.div`
   
@@ -64,7 +86,7 @@ const FormWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 100px;
+  padding-top: 40px;
 `
 
 const Wrapper = styled.div`
@@ -100,18 +122,21 @@ font-size: 12px;
 padding: 20px;
 line-height: 20px;
 `
-
 const ImgWrapper = styled.img`
   width: 50px;
+  &:hover {
+    scale: 1.15;
+  }
+  margin-left: 40px;
+  margin-right: 30px;
+  cursor: pointer;
 `
-
 const IconWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 20px;
-  align-items: center;
-`
+  justify-content: center;
+  align-items: center;  
+  
+  `
 
 export default ContactFR
