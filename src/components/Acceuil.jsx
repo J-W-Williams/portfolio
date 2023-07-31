@@ -7,7 +7,7 @@ const Acceuil = () => {
 
   // use props for something here
 
-  const greetingMessages = ["intégrateur", "explorateur multimédia", "futur collègue", "amateur de JavaScript", "developer full-stack", "autodidacte", "programmeur", "traceur", "penseur"]
+  const greetingMessages = ["intégrateur", "explorateur multimédia", "futur collègue", "amateur de JavaScript", "développeur full-stack", "autodidacte", "programmeur", "traceur", "penseur"]
 
   return (
     <>

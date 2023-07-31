@@ -29,8 +29,8 @@ const Apropos = () => {
 
   <IconWrapper>
  {/* For icons, need title below.  tiny flex UI design. */}
-    <ImgWrapper src="/html.png" alt="HTML5"></ImgWrapper>
-    <ImgWrapper src="/css.png" alt="CSS3"></ImgWrapper>
+    <ImgWrapper src="/html5.png" alt="HTML5"></ImgWrapper>
+    <ImgWrapper src="/css3.png" alt="CSS3"></ImgWrapper>
     <ImgWrapper src="/javascript.png" alt="JavaScript"></ImgWrapper>
     <ImgWrapper src="/react.png" alt="React"></ImgWrapper>
     <ImgWrapper src="/mongo.svg" alt="MongoDB"></ImgWrapper>
