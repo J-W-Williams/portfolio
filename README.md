@@ -1,4 +1,4 @@
-# John Wrinch Williams - Porfolio
+# John Wrinch Williams - Portfolio
 
 ## Overview
 For this project, I wanted the site to be bilingual (English / French).  I decided to build it manually for the experience of doing so in React (no libraries). I wanted the URLs to also be translated, as I find it more welcoming when I visit a site and the URLs are in my language, even if I've switched to it.
